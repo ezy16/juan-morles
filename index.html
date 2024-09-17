@@ -33,36 +33,17 @@
         h1 span {
             display: inline-block;
             position: relative;
-            animation: glow 3s ease-in-out infinite; /* Aumentar la duración de la animación */
-            transition: text-shadow 0.5s ease-in-out;
+            animation: glow 2s ease-in-out forwards; /* Ajustar duración y usar forwards */
+            animation-delay: calc(var(--i) * 2s); /* Ajustar retraso basado en la variable --i */
+            opacity: 0; /* Inicialmente invisibles */
         }
-        h1 span:nth-child(1) { animation-delay: 0s; }
-        h1 span:nth-child(2) { animation-delay: 0.3s; }
-        h1 span:nth-child(3) { animation-delay: 0.6s; }
-        h1 span:nth-child(4) { animation-delay: 0.9s; }
-        h1 span:nth-child(5) { animation-delay: 1.2s; }
-        h1 span:nth-child(6) { animation-delay: 1.5s; }
-        h1 span:nth-child(7) { animation-delay: 1.8s; }
-        h1 span:nth-child(8) { animation-delay: 2.1s; }
-        h1 span:nth-child(9) { animation-delay: 2.4s; }
-        h1 span:nth-child(10) { animation-delay: 2.7s; }
-        h1 span:nth-child(11) { animation-delay: 3s; }
-        h1 span:nth-child(12) { animation-delay: 3.3s; }
-        h1 span:nth-child(13) { animation-delay: 3.6s; }
-        h1 span:nth-child(14) { animation-delay: 3.9s; }
-        h1 span:nth-child(15) { animation-delay: 4.2s; }
-        h1 span:nth-child(16) { animation-delay: 4.5s; }
+        h1 span.active {
+            opacity: 1; /* Hacer visible la letra activa */
+        }
 
         @keyframes glow {
             0% { text-shadow: 0 0 0px #FFD700; }
-            50% { text-shadow: 
-                0 0 3px #FFD700, 
-                0 0 6px #FFD700, 
-                0 0 9px #FFD700, 
-                0 0 12px #FFD700, 
-                0 0 15px #FFD700, 
-                0 0 18px #FFD700, 
-                0 0 21px #FFD700; }
+            50% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700; }
             100% { text-shadow: 0 0 0px #FFD700; }
         }
 
@@ -93,19 +74,39 @@
 </head>
 <body>
     <h1>
-        <span>J</span>
-        <span>U</span>
-        <span>A</span>
-        <span>N</span>
+        <span style="--i: 0;">J</span>
+        <span style="--i: 1;">U</span>
+        <span style="--i: 2;">A</span>
+        <span style="--i: 3;">N</span>
         <span>&nbsp;</span>
-        <span>M</span>
-        <span>O</span>
-        <span>R</span>
-        <span>L</span>
-        <span>E</span>
-        <span>S</span>
+        <span style="--i: 4;">M</span>
+        <span style="--i: 5;">O</span>
+        <span style="--i: 6;">R</span>
+        <span style="--i: 7;">L</span>
+        <span style="--i: 8;">E</span>
+        <span style="--i: 9;">S</span>
     </h1>
     <h2>Tengo un recordatorio para ti</h2>
     <a href="page2.html" class="button">Pincha aquí</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const spans = document.querySelectorAll('h1 span');
+            let index = 0;
+            
+            function activateNext() {
+                if (index > 0) {
+                    spans[index - 1].classList.remove('active');
+                }
+                spans[index].classList.add('active');
+                index++;
+                if (index < spans.length) {
+                    setTimeout(activateNext, 2000); // Cambia el tiempo para ajustar el intervalo entre letras
+                }
+            }
+            
+            activateNext(); // Inicia la animación
+        });
+    </script>
 </body>
 </html>
