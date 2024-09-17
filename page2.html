@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+            transform: rotate(-45deg);
+            animation: float 5s infinite;
+        }
+        .heart:nth-child(odd) {
+            background: #ff4d4d;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(-45deg);
+            }
+        }
+        h1 {
+            font-size: 2rem;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">
+        <!-- Create multiple heart elements for animation -->
+        <div class="heart" style="top: 10%; left: 20%;"></div>
+        <div class="heart" style="top: 20%; left: 50%;"></div>
+        <div class="heart" style="top: 30%; left: 30%;"></div>
+        <div class="heart" style="top: 40%; left: 60%;"></div>
+        <!-- Add more hearts if desired -->
+    </div>
+    <h1>Te quiero mucho mi amor, eres increíble</h1>
+</body>
+</html>
