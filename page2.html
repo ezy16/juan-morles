@@ -30,8 +30,8 @@
         }
         .heart {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             animation: float 5s infinite ease-in-out;
             opacity: 0.8;
         }
@@ -50,7 +50,7 @@
             }
         }
         h1 {
-            font-size: 3rem;
+            font-size: 4rem; /* Aumenta el tamaño del texto */
             color: #ffcc00;
             position: relative;
             z-index: 1;
@@ -61,38 +61,33 @@
 </head>
 <body>
     <div class="hearts">
-        <!-- Multiple heart SVGs for animation -->
-        <div class="heart" style="top: 100%; left: 5%; animation-duration: 4s;">
+        <!-- Múltiples corazones SVG para la animación -->
+        <div class="heart" style="top: 100%; left: 0%; animation-duration: 4s;">
             <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
         </div>
-        <div class="heart" style="top: 100%; left: 15%; animation-duration: 4.5s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 25%; animation-duration: 5s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 35%; animation-duration: 4s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 45%; animation-duration: 4.5s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 55%; animation-duration: 5s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <!-- Add more hearts with different positions and durations if desired -->
+        <!-- Duplicamos los corazones para abarcar más ancho -->
+        <div class="heart" style="top: 100%; left: 10%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 20%; animation-duration: 5s;"></div>
+        <div class="heart" style="top: 100%; left: 30%; animation-duration: 4s;"></div>
+        <div class="heart" style="top: 100%; left: 40%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 50%; animation-duration: 5s;"></div>
+        <div class="heart" style="top: 100%; left: 60%; animation-duration: 4s;"></div>
+        <div class="heart" style="top: 100%; left: 70%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 80%; animation-duration: 5s;"></div>
+        <div class="heart" style="top: 100%; left: 90%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 100%; animation-duration: 5s;"></div>
+        <!-- Corazones adicionales para llenar más el área -->
+        <div class="heart" style="top: 100%; left: 15%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 25%; animation-duration: 5s;"></div>
+        <div class="heart" style="top: 100%; left: 35%; animation-duration: 4s;"></div>
+        <div class="heart" style="top: 100%; left: 45%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 55%; animation-duration: 5s;"></div>
+        <div class="heart" style="top: 100%; left: 65%; animation-duration: 4s;"></div>
+        <div class="heart" style="top: 100%; left: 75%; animation-duration: 4.5s;"></div>
+        <div class="heart" style="top: 100%; left: 85%; animation-duration: 5s;"></div>
+        <div class="heart" style="top: 100%; left: 95%; animation-duration: 4.5s;"></div>
     </div>
     <h1>Te quiero mucho mi amor, eres increíble</h1>
 </body>
