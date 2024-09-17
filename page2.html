@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te adoro Juan Morles</title>
+    <title>Te Adoro Juan Morles</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #003366;
             color: white;
-            text-align: center;
             margin: 0;
             padding: 0;
             height: 100vh;
             overflow: hidden;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
         .hearts {
             position: absolute;
@@ -29,35 +32,20 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background: red;
-            clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
-            transform: rotate(-45deg);
             animation: float 5s infinite ease-in-out;
             opacity: 0.8;
         }
-        .heart:before, .heart:after {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: red;
-            border-radius: 50%;
-        }
-        .heart:before {
-            top: -25px;
-            left: 0;
-        }
-        .heart:after {
-            top: 0;
-            left: 25px;
+        .heart svg {
+            width: 100%;
+            height: 100%;
         }
         @keyframes float {
             0% {
-                transform: translateY(0) rotate(-45deg);
+                transform: translateY(0);
                 opacity: 0.8;
             }
             100% {
-                transform: translateY(-100vh) rotate(-45deg);
+                transform: translateY(-100vh);
                 opacity: 0;
             }
         }
@@ -67,25 +55,44 @@
             position: relative;
             z-index: 1;
             margin: 0;
-            line-height: 1.2;
             padding: 20px;
         }
     </style>
 </head>
 <body>
     <div class="hearts">
-        <!-- Multiple heart elements for animation -->
-        <div class="heart" style="top: 100%; left: 5%; animation-duration: 4s;"></div>
-        <div class="heart" style="top: 100%; left: 15%; animation-duration: 4.5s;"></div>
-        <div class="heart" style="top: 100%; left: 25%; animation-duration: 5s;"></div>
-        <div class="heart" style="top: 100%; left: 35%; animation-duration: 4s;"></div>
-        <div class="heart" style="top: 100%; left: 45%; animation-duration: 4.5s;"></div>
-        <div class="heart" style="top: 100%; left: 55%; animation-duration: 5s;"></div>
-        <div class="heart" style="top: 100%; left: 65%; animation-duration: 4s;"></div>
-        <div class="heart" style="top: 100%; left: 75%; animation-duration: 4.5s;"></div>
-        <div class="heart" style="top: 100%; left: 85%; animation-duration: 5s;"></div>
-        <div class="heart" style="top: 100%; left: 95%; animation-duration: 4.5s;"></div>
-        <!-- More hearts if desired -->
+        <!-- Multiple heart SVGs for animation -->
+        <div class="heart" style="top: 100%; left: 5%; animation-duration: 4s;">
+            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart" style="top: 100%; left: 15%; animation-duration: 4.5s;">
+            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart" style="top: 100%; left: 25%; animation-duration: 5s;">
+            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart" style="top: 100%; left: 35%; animation-duration: 4s;">
+            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart" style="top: 100%; left: 45%; animation-duration: 4.5s;">
+            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <div class="heart" style="top: 100%; left: 55%; animation-duration: 5s;">
+            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+        </div>
+        <!-- Add more hearts with different positions and durations if desired -->
     </div>
     <h1>Te quiero mucho mi amor, eres increíble</h1>
 </body>
