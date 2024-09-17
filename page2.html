@@ -22,7 +22,7 @@
         .hearts {
             position: absolute;
             width: 100%;
-            height: 100px; /* Altura del contenedor de corazones */
+            height: 100vh; /* Abarcar toda la altura de la pantalla */
             bottom: 0; /* Posicionar el contenedor en la parte inferior */
             left: 0;
             pointer-events: none;
@@ -43,15 +43,15 @@
         }
         @keyframes float {
             0% {
-                transform: translateY(0);
+                transform: translateY(100vh); /* Iniciar desde la parte inferior del contenedor */
                 opacity: 0.8;
             }
             50% {
-                transform: translateY(-100vh); /* Mover los corazones fuera de la pantalla */
+                transform: translateY(-100vh); /* Mover los corazones fuera de la pantalla por completo */
                 opacity: 0;
             }
             100% {
-                transform: translateY(0);
+                transform: translateY(100vh); /* Volver a la parte inferior del contenedor */
                 opacity: 0.8;
             }
         }
