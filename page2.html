@@ -31,7 +31,7 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            animation: float 10s infinite ease-in-out; /* Ajusta el tiempo para que los corazones permanezcan más tiempo */
+            animation: float ease-in-out;
             opacity: 0.8;
         }
         .heart svg {
@@ -49,7 +49,7 @@
             }
         }
         h1 {
-            font-size: 4rem; /* Aumenta el tamaño del texto */
+            font-size: 4rem;
             color: #ffcc00;
             position: relative;
             z-index: 1;
@@ -59,59 +59,27 @@
     </style>
 </head>
 <body>
-    <div class="hearts">
-        <!-- Corazones SVG para la animación -->
-        <div class="heart" style="top: 100%; left: 5%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 15%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 25%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 35%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 45%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 55%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 65%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 75%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 85%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-        <div class="heart" style="top: 100%; left: 95%; animation-duration: 10s;">
-            <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-        </div>
-    </div>
+    <div class="hearts" id="hearts-container"></div>
     <h1>Te quiero mucho mi amor, eres increíble</h1>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('hearts-container');
+            const percentages = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99];
+
+            percentages.forEach(percentage => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${percentage}%`;
+                heart.style.animationDuration = `${Math.random() * 4 + 1}s`; // Variable entre 1 y 5 segundos
+                heart.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                `;
+                container.appendChild(heart);
+            });
+        });
+    </script>
 </body>
 </html>
