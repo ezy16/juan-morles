@@ -48,7 +48,7 @@
             100% { text-shadow: 0 0 0px #FFD700; } /* Sin brillo */
         }
         .glow span {
-            animation: glow 1.5s ease-in-out infinite; /* Tiempo total de animación por letra */
+            animation: glow 1.5s ease-in-out forwards; /* Tiempo total de animación por letra */
         }
         /* Animación secuencial para el brillo */
         .glow span:nth-child(1) { animation-delay: 0s; }
@@ -68,7 +68,7 @@
             100% { opacity: 1; }
         }
         .glow {
-            animation: glow-sequence 8s infinite; /* Duración total para pasar por todas las letras */
+            animation: glow-sequence 17s infinite; /* Duración total para pasar por todas las letras */
         }
         h2 {
             font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
