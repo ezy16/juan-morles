@@ -52,13 +52,11 @@
             position: relative;
             color: white;
             z-index: 1;
-            text-shadow: 0 0 0px #FFD700;
-            opacity: 0; /* Inicialmente apagadas */
-            transition: opacity 0.3s ease-in-out; /* Transición para el brillo */
+            text-shadow: 0 0 0px #FFD700; /* Sin brillo por defecto */
+            transition: text-shadow 0.3s ease-in-out; /* Transición para el brillo */
         }
         .glow span.active {
-            opacity: 1; /* Brillo encendido */
-            text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700; /* Brillo activo */
         }
         h2 {
             font-family: 'Poppins', sans-serif;
@@ -106,7 +104,7 @@
         let index = 0;
 
         function activateNextLetter() {
-            // Apagar todas las letras
+            // Apagar el brillo de todas las letras
             glowElements.forEach(el => el.classList.remove('active'));
 
             // Activar la letra actual
