@@ -40,29 +40,30 @@
             position: relative;
             color: white; /* Color del texto */
             z-index: 1;
-            animation: glow 6s linear infinite; /* Animación continua */
+            animation: glow 12s linear infinite; /* Animación continua */
         }
         @keyframes glow {
             0% { text-shadow: 0 0 0px #FFD700; }
-            10% { text-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700; }
-            20% { text-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700; }
-            30% { text-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700; }
-            40% { text-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700; }
-            50% { text-shadow: 0 0 8px #FFD700, 0 0 12px #FFD700; }
+            10% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
+            20% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
+            30% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
+            40% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
+            50% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
             60% { text-shadow: 0 0 0px #FFD700; }
             100% { text-shadow: 0 0 0px #FFD700; }
         }
+        /* Animaciones secuenciales */
         .glow span:nth-child(1) { animation-delay: 0s; }
-        .glow span:nth-child(2) { animation-delay: 0.6s; }
-        .glow span:nth-child(3) { animation-delay: 1.2s; }
-        .glow span:nth-child(4) { animation-delay: 1.8s; }
-        .glow span:nth-child(5) { animation-delay: 2.4s; }
-        .glow span:nth-child(6) { animation-delay: 3s; }
-        .glow span:nth-child(7) { animation-delay: 3.6s; }
-        .glow span:nth-child(8) { animation-delay: 4.2s; }
-        .glow span:nth-child(9) { animation-delay: 4.8s; }
-        .glow span:nth-child(10) { animation-delay: 5.4s; }
-        .glow span:nth-child(11) { animation-delay: 6s; }
+        .glow span:nth-child(2) { animation-delay: 1s; }
+        .glow span:nth-child(3) { animation-delay: 2s; }
+        .glow span:nth-child(4) { animation-delay: 3s; }
+        .glow span:nth-child(5) { animation-delay: 4s; }
+        .glow span:nth-child(6) { animation-delay: 5s; }
+        .glow span:nth-child(7) { animation-delay: 6s; }
+        .glow span:nth-child(8) { animation-delay: 7s; }
+        .glow span:nth-child(9) { animation-delay: 8s; }
+        .glow span:nth-child(10) { animation-delay: 9s; }
+        .glow span:nth-child(11) { animation-delay: 10s; }
         h2 {
             font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
             font-size: 2rem;
@@ -94,7 +95,7 @@
         <span>U</span>
         <span>A</span>
         <span>N</span>
-        <span>&nbsp;</span>
+        <span>&nbsp;</span> <!-- Espacio entre "JUAN" y "MORLES" -->
         <span>M</span>
         <span>O</span>
         <span>R</span>
