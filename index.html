@@ -33,12 +33,9 @@
         h1 span {
             display: inline-block;
             position: relative;
-            animation: glow 2s ease-in-out forwards; /* Ajustar duración y usar forwards */
-            animation-delay: calc(var(--i) * 2s); /* Ajustar retraso basado en la variable --i */
-            opacity: 0; /* Inicialmente invisibles */
-        }
-        h1 span.active {
-            opacity: 1; /* Hacer visible la letra activa */
+            opacity: 1; /* Mantener letras visibles */
+            animation: glow 2s ease-in-out forwards; /* Ajustar duración de la animación */
+            animation-delay: calc(var(--i) * 2s); /* Retraso basado en la variable --i */
         }
 
         @keyframes glow {
@@ -96,9 +93,9 @@
             
             function activateNext() {
                 if (index > 0) {
-                    spans[index - 1].classList.remove('active');
+                    spans[index - 1].style.opacity = '1'; // Hacer visible la letra anterior
                 }
-                spans[index].classList.add('active');
+                spans[index].style.opacity = '1'; // Hacer visible la letra actual
                 index++;
                 if (index < spans.length) {
                     setTimeout(activateNext, 2000); // Cambia el tiempo para ajustar el intervalo entre letras
