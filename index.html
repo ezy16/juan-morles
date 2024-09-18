@@ -40,16 +40,13 @@
             position: relative;
             color: white; /* Color del texto */
             z-index: 1;
-            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; /* Brillo alrededor de la letra */
-            animation: none; /* Sin animación inicial */
+            /* Inicialmente, sin brillo */
+            text-shadow: 0 0 0px #FFD700;
         }
         @keyframes glow {
-            0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; } /* Brillo inicial */
-            20% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
-            40% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
-            60% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
-            80% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
-            100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; }
+            0% { text-shadow: 0 0 0px #FFD700; } /* Sin brillo */
+            20% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; } /* Brillo definido */
+            100% { text-shadow: 0 0 0px #FFD700; } /* Sin brillo */
         }
         .glow span {
             animation: glow 1.5s ease-in-out forwards; /* Tiempo total de animación por letra */
