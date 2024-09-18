@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('https://www.example.com/tu-imagen-de-agua.jpg') no-repeat center center fixed; /* Reemplaza con la URL de tu imagen de agua */
-            background-size: cover;
+            background: url('https://images.unsplash.com/photo-1592082923202-0d1fbc7b9142') no-repeat center center fixed; /* Imagen de fondo de agua */
+            background-size: cover; /* Asegura que la imagen cubra toda el área */
             color: white;
             text-align: center;
             margin: 0;
@@ -19,28 +19,30 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
+            position: relative; /* Para usar el pseudo-elemento con el filtro */
         }
-        /* Agregar una superposición azul */
-        .overlay {
+        /* Añade una capa de filtro para mantener el color azul */
+        body::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 71, 171, 0.5); /* Azul con opacidad */
-            z-index: -1; /* Asegúrate de que el contenido esté por encima */
+            background: rgba(0, 71, 171, 0.6); /* Color azul con opacidad para mantener el color de fondo */
+            z-index: 1; /* Asegura que el filtro esté por encima de la imagen de fondo pero debajo del contenido */
         }
         h1 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Oswald', sans-serif; /* Cambiar fuente a Oswald */
             font-weight: bold;
-            font-size: 6rem;
+            font-size: 6rem; /* Aumentar tamaño del texto */
             margin: 0;
             color: white;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.04em; /* Unir letras solo un poco */
             position: relative;
             display: inline-block;
+            z-index: 2; /* Asegura que el texto esté sobre el filtro */
         }
         .glow {
             display: inline-block;
@@ -49,18 +51,20 @@
         .glow span {
             display: inline-block;
             position: relative;
-            color: white;
+            color: white; /* Color del texto */
             z-index: 1;
+            /* Brillo definido alrededor del borde */
             text-shadow: 0 0 0px #FFD700;
         }
         @keyframes glow {
-            0% { text-shadow: 0 0 0px #FFD700; }
-            50% { text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700; }
-            100% { text-shadow: 0 0 0px #FFD700; }
+            0% { text-shadow: 0 0 0px #FFD700; } /* Sin brillo */
+            50% { text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700; } /* Brillo en el borde */
+            100% { text-shadow: 0 0 0px #FFD700; } /* Sin brillo */
         }
         .glow span {
-            animation: glow 0.3s ease-in-out forwards;
+            animation: glow 0.3s ease-in-out forwards; /* Tiempo total de animación por letra */
         }
+        /* Animación secuencial para el brillo */
         .glow span:nth-child(1) { animation-delay: 0s; }
         .glow span:nth-child(2) { animation-delay: 0.3s; }
         .glow span:nth-child(3) { animation-delay: 0.6s; }
@@ -72,46 +76,49 @@
         .glow span:nth-child(9) { animation-delay: 2.4s; }
         .glow span:nth-child(10) { animation-delay: 2.7s; }
         .glow span:nth-child(11) { animation-delay: 3s; }
+
+        /* Ciclo de la animación de la secuencia de brillo */
         @keyframes glow-sequence {
             0% { opacity: 1; }
             100% { opacity: 1; }
         }
         .glow {
-            animation: glow-sequence 03s infinite;
+            animation: glow-sequence 03s infinite; /* Duración total para pasar por todas las letras */
         }
         h2 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
             font-size: 2rem;
             margin: 10px 0;
-            color: #FFD700;
+            color: #FFD700; /* Cambiar color del texto */
+            z-index: 2; /* Asegura que el texto esté sobre el filtro */
         }
         .button {
             display: inline-block;
             padding: 10px 20px;
             margin-top: 20px;
-            background-color: #FFD700;
-            color: black;
-            border: 2px solid #FFD700;
-            border-radius: 20px;
+            background-color: #FFD700; /* Cambiar color de fondo del botón */
+            color: black; /* Cambiar color del texto del botón */
+            border: 2px solid #FFD700; /* Cambiar color del borde */
+            border-radius: 20px; /* Hacer las puntas más ovaladas */
             text-decoration: none;
             font-size: 1.2rem;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; /* Agregar transición para el efecto hover */
+            z-index: 2; /* Asegura que el botón esté sobre el filtro */
         }
         .button:hover {
-            box-shadow: 0 0 15px #FFD700;
-            background-color: #FFD700;
-            color: black;
+            box-shadow: 0 0 15px #FFD700; /* Agregar brillo al pasar el cursor */
+            background-color: #FFD700; /* Mantener el color de fondo */
+            color: black; /* Mantener el color del texto */
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <h1 class="glow">
         <span>J</span>
         <span>U</span>
         <span>A</span>
         <span>N</span>
-        <span>&nbsp;</span>
+        <span>&nbsp;</span> <!-- Espacio entre "JUAN" y "MORLES" -->
         <span>M</span>
         <span>O</span>
         <span>R</span>
