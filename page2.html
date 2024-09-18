@@ -42,9 +42,9 @@
         }
         .heart {
             position: absolute;
-            width: 70px; /* Aumenta el tamaño */
-            height: 70px; /* Aumenta el tamaño */
-            opacity: 1;
+            width: 70px; 
+            height: 70px; 
+            opacity: 1; /* Asegúrate de que la opacidad sea 1 */
             animation: float linear infinite; 
             bottom: 0; 
         }
@@ -56,11 +56,11 @@
         @keyframes float {
             0% {
                 transform: translateY(100vh);
-                opacity: 0.8;
+                opacity: 1; /* Mantén la opacidad en 1 durante la animación */
             }
             100% {
                 transform: translateY(-100vh);
-                opacity: 0;
+                opacity: 0; /* Opacidad al final de la animación */
             }
         }
         h1 {
@@ -99,4 +99,3 @@
     </script>
 </body>
 </html>
-
