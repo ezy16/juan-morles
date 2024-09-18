@@ -26,16 +26,21 @@
             margin: 0;
             color: white;
             text-transform: uppercase;
-            letter-spacing: 0.2em; /* Separar letras */
+            letter-spacing: 0.1em; /* Unir letras solo un poco */
             position: relative;
             display: inline-block;
+            overflow: hidden; /* Asegurar que la animación no se desborde */
         }
-        h1 span {
+        .glow {
             display: inline-block;
             position: relative;
-            opacity: 1; /* Mantener letras visibles */
-            animation: glow 2s ease-in-out infinite; /* Hacer que la animación sea infinita */
-            animation-delay: calc(var(--i) * 1s); /* Ajustar retraso basado en la variable --i */
+        }
+        .glow span {
+            display: inline-block;
+            position: relative;
+            opacity: 1;
+            animation: glow 2s ease-in-out infinite;
+            animation-delay: calc(var(--i) * 0.5s); /* Reducir el tiempo del brillo */
         }
 
         @keyframes glow {
@@ -70,7 +75,7 @@
     </style>
 </head>
 <body>
-    <h1>
+    <h1 class="glow">
         <span style="--i: 0;">J</span>
         <span style="--i: 1;">U</span>
         <span style="--i: 2;">A</span>
