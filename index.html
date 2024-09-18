@@ -26,7 +26,7 @@
             margin: 0;
             color: white;
             text-transform: uppercase;
-            letter-spacing: 0.1em; /* Unir letras solo un poco */
+            letter-spacing: 0.05em; /* Unir letras solo un poco */
             position: relative;
             display: inline-block;
             overflow: hidden; /* Asegurar que la animación no se desborde */
@@ -34,21 +34,26 @@
         .glow {
             display: inline-block;
             position: relative;
+            animation: glow 5s linear infinite; /* Animación continua */
         }
-        .glow span {
-            display: inline-block;
-            position: relative;
-            opacity: 1;
-            animation: glow 2s ease-in-out infinite;
-            animation-delay: calc(var(--i) * 0.5s); /* Reducir el tiempo del brillo */
-        }
-
         @keyframes glow {
-            0% { text-shadow: 0 0 0px #FFD700; }
-            50% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700; }
-            100% { text-shadow: 0 0 0px #FFD700; }
+            0% { 
+                text-shadow: 0 0 0px #FFD700; 
+                transform: translateX(0);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 8px #FFD700, 
+                    0 0 16px #FFD700, 
+                    0 0 24px #FFD700, 
+                    0 0 32px #FFD700;
+                transform: translateX(0);
+            }
+            100% { 
+                text-shadow: 0 0 0px #FFD700; 
+                transform: translateX(-100%);
+            }
         }
-
         h2 {
             font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
             font-size: 2rem;
@@ -75,19 +80,7 @@
     </style>
 </head>
 <body>
-    <h1 class="glow">
-        <span style="--i: 0;">J</span>
-        <span style="--i: 1;">U</span>
-        <span style="--i: 2;">A</span>
-        <span style="--i: 3;">N</span>
-        <span>&nbsp;</span>
-        <span style="--i: 4;">M</span>
-        <span style="--i: 5;">O</span>
-        <span style="--i: 6;">R</span>
-        <span style="--i: 7;">L</span>
-        <span style="--i: 8;">E</span>
-        <span style="--i: 9;">S</span>
-    </h1>
+    <h1 class="glow">JUAN MORLES</h1>
     <h2>Tengo un recordatorio para ti</h2>
     <a href="page2.html" class="button">Pincha aquí</a>
 </body>
