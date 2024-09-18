@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Oswald, sans-serif;
-            background: url('https://images.unsplash.com/photo-1562016600-ece13e8ba570?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed; /* Imagen de agua */
-            background-size: cover; /* Asegura que la imagen cubra toda el área */
+            background: url('https://images.unsplash.com/photo-1562016600-ece13e8ba570?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed; 
+            background-size: cover; 
             color: white;
             text-align: center;
             margin: 0;
@@ -18,9 +18,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative; /* Para usar el pseudo-elemento con el filtro */
+            position: relative; 
         }
-        /* Añade una capa de filtro para mantener el color azul */
         body::before {
             content: "";
             position: absolute;
@@ -28,14 +27,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 71, 171, 0.6); /* Color azul con opacidad */
-            z-index: 1; /* Asegura que el filtro esté por encima de la imagen de fondo pero debajo del contenido */
+            background: rgba(0, 71, 171, 0.6);
+            z-index: 1;
         }
         .hearts {
             position: absolute;
             width: 100%;
-            height: 100vh; /* Abarcar toda la altura de la pantalla */
-            bottom: 0; /* Posicionar el contenedor en la parte inferior */
+            height: 100vh; 
+            bottom: 0; 
             left: 0;
             pointer-events: none;
             overflow: hidden;
@@ -43,23 +42,24 @@
         }
         .heart {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 70px; /* Aumenta el tamaño */
+            height: 70px; /* Aumenta el tamaño */
             opacity: 1;
-            animation: float linear infinite; /* Añadido 'infinite' para bucle continuo */
-            bottom: 0; /* Iniciar la animación desde la parte inferior del contenedor */
+            animation: float linear infinite; 
+            bottom: 0; 
         }
         .heart svg {
             width: 100%;
             height: 100%;
+            shape-rendering: geometricPrecision; /* Mejora la nitidez del SVG */
         }
         @keyframes float {
             0% {
-                transform: translateY(100vh); /* Iniciar desde la parte inferior del contenedor */
+                transform: translateY(100vh);
                 opacity: 0.8;
             }
             100% {
-                transform: translateY(-100vh); /* Mover los corazones fuera de la pantalla por completo */
+                transform: translateY(-100vh);
                 opacity: 0;
             }
         }
@@ -86,8 +86,8 @@
                 const heart = document.createElement('div');
                 heart.classList.add('heart');
                 heart.style.left = `${percentage}%`;
-                heart.style.animationDuration = `${Math.random() * 4 + 1}s`; // Tiempo variable entre 1 y 5 segundos
-                heart.style.animationDelay = `0s`; // Todos comienzan al mismo tiempo
+                heart.style.animationDuration = `${Math.random() * 4 + 1}s`;
+                heart.style.animationDelay = `0s`;
                 heart.innerHTML = `
                     <svg viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -99,3 +99,4 @@
     </script>
 </body>
 </html>
+
