@@ -62,6 +62,13 @@
         .glow span:nth-child(9) { animation-delay: 12s; }
         .glow span:nth-child(10) { animation-delay: 13.5s; }
         .glow span:nth-child(11) { animation-delay: 15s; }
+        @keyframes glow-sequence {
+            0% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+        .glow {
+            animation: glow-sequence 17s infinite; /* Duración total para pasar por todas las letras */
+        }
         h2 {
             font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
             font-size: 2rem;
