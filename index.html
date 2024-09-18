@@ -40,30 +40,29 @@
             position: relative;
             color: white; /* Color del texto */
             z-index: 1;
-            animation: glow 12s linear infinite; /* Animación continua */
+            /* Inicialmente, sin brillo */
+            text-shadow: 0 0 0px #FFD700;
         }
         @keyframes glow {
             0% { text-shadow: 0 0 0px #FFD700; }
-            10% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
-            20% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
-            30% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
-            40% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
-            50% { text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700; }
-            60% { text-shadow: 0 0 0px #FFD700; }
+            10% { text-shadow: 0 0 10px #FFD700; }
             100% { text-shadow: 0 0 0px #FFD700; }
         }
-        /* Animaciones secuenciales */
+        .glow span {
+            animation: glow 1.5s ease-in-out infinite; /* Tiempo total de animación por letra */
+        }
+        /* Animación secuencial */
         .glow span:nth-child(1) { animation-delay: 0s; }
-        .glow span:nth-child(2) { animation-delay: 1s; }
-        .glow span:nth-child(3) { animation-delay: 2s; }
-        .glow span:nth-child(4) { animation-delay: 3s; }
-        .glow span:nth-child(5) { animation-delay: 4s; }
-        .glow span:nth-child(6) { animation-delay: 5s; }
-        .glow span:nth-child(7) { animation-delay: 6s; }
-        .glow span:nth-child(8) { animation-delay: 7s; }
-        .glow span:nth-child(9) { animation-delay: 8s; }
-        .glow span:nth-child(10) { animation-delay: 9s; }
-        .glow span:nth-child(11) { animation-delay: 10s; }
+        .glow span:nth-child(2) { animation-delay: 1.5s; }
+        .glow span:nth-child(3) { animation-delay: 3s; }
+        .glow span:nth-child(4) { animation-delay: 4.5s; }
+        .glow span:nth-child(5) { animation-delay: 6s; }
+        .glow span:nth-child(6) { animation-delay: 7.5s; }
+        .glow span:nth-child(7) { animation-delay: 9s; }
+        .glow span:nth-child(8) { animation-delay: 10.5s; }
+        .glow span:nth-child(9) { animation-delay: 12s; }
+        .glow span:nth-child(10) { animation-delay: 13.5s; }
+        .glow span:nth-child(11) { animation-delay: 15s; }
         h2 {
             font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
             font-size: 2rem;
