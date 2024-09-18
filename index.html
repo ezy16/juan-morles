@@ -34,8 +34,8 @@
             display: inline-block;
             position: relative;
             opacity: 1; /* Mantener letras visibles */
-            animation: glow 2s ease-in-out forwards; /* Ajustar duración de la animación */
-            animation-delay: calc(var(--i) * 2s); /* Retraso basado en la variable --i */
+            animation: glow 2s ease-in-out infinite; /* Hacer que la animación sea infinita */
+            animation-delay: calc(var(--i) * 1s); /* Ajustar retraso basado en la variable --i */
         }
 
         @keyframes glow {
@@ -85,25 +85,5 @@
     </h1>
     <h2>Tengo un recordatorio para ti</h2>
     <a href="page2.html" class="button">Pincha aquí</a>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const spans = document.querySelectorAll('h1 span');
-            let index = 0;
-            
-            function activateNext() {
-                if (index > 0) {
-                    spans[index - 1].style.opacity = '1'; // Hacer visible la letra anterior
-                }
-                spans[index].style.opacity = '1'; // Hacer visible la letra actual
-                index++;
-                if (index < spans.length) {
-                    setTimeout(activateNext, 2000); // Cambia el tiempo para ajustar el intervalo entre letras
-                }
-            }
-            
-            activateNext(); // Inicia la animación
-        });
-    </script>
 </body>
 </html>
