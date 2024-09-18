@@ -8,6 +8,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: url('ruta/a/tu/imagen-de-agua.jpg') no-repeat center center fixed; /* Reemplaza con la ruta de tu imagen de agua */
+            background-size: cover;
             color: white;
             text-align: center;
             margin: 0;
@@ -17,30 +19,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #0047AB; /* Color de fondo azul */
-            overflow: hidden; /* Ocultar el desbordamiento para el efecto de agua */
+            position: relative;
         }
-
-        /* Efecto de agua */
-        body::before {
-            content: '';
+        /* Agregar una superposición azul */
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, rgba(0,0,0,0.2) 80%),
-                        linear-gradient(0deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
-            background-size: 100% 100%, 100% 100%;
-            animation: water 10s infinite linear;
-            z-index: -1; /* Asegúrate de que el efecto de agua esté detrás del contenido */
+            background: rgba(0, 71, 171, 0.5); /* Azul con opacidad */
+            z-index: -1; /* Asegúrate de que el contenido esté por encima */
         }
-
-        @keyframes water {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
         h1 {
             font-family: 'Oswald', sans-serif;
             font-weight: bold;
@@ -52,12 +42,10 @@
             position: relative;
             display: inline-block;
         }
-
         .glow {
             display: inline-block;
             position: relative;
         }
-
         .glow span {
             display: inline-block;
             position: relative;
@@ -65,17 +53,14 @@
             z-index: 1;
             text-shadow: 0 0 0px #FFD700;
         }
-
         @keyframes glow {
             0% { text-shadow: 0 0 0px #FFD700; }
             50% { text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700; }
             100% { text-shadow: 0 0 0px #FFD700; }
         }
-
         .glow span {
             animation: glow 0.3s ease-in-out forwards;
         }
-
         .glow span:nth-child(1) { animation-delay: 0s; }
         .glow span:nth-child(2) { animation-delay: 0.3s; }
         .glow span:nth-child(3) { animation-delay: 0.6s; }
@@ -87,23 +72,19 @@
         .glow span:nth-child(9) { animation-delay: 2.4s; }
         .glow span:nth-child(10) { animation-delay: 2.7s; }
         .glow span:nth-child(11) { animation-delay: 3s; }
-
         @keyframes glow-sequence {
             0% { opacity: 1; }
             100% { opacity: 1; }
         }
-
         .glow {
             animation: glow-sequence 03s infinite;
         }
-
         h2 {
             font-family: 'Poppins', sans-serif;
             font-size: 2rem;
             margin: 10px 0;
             color: #FFD700;
         }
-
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -116,7 +97,6 @@
             font-size: 1.2rem;
             transition: all 0.3s ease-in-out;
         }
-
         .button:hover {
             box-shadow: 0 0 15px #FFD700;
             background-color: #FFD700;
@@ -125,12 +105,13 @@
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <h1 class="glow">
         <span>J</span>
         <span>U</span>
         <span>A</span>
         <span>N</span>
-        <span>&nbsp;</span> <!-- Espacio entre "JUAN" y "MORLES" -->
+        <span>&nbsp;</span>
         <span>M</span>
         <span>O</span>
         <span>R</span>
