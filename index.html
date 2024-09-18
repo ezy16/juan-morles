@@ -26,7 +26,7 @@
             margin: 0;
             color: white;
             text-transform: uppercase;
-            letter-spacing: 0.0em; /* Unir letras solo un poco */
+            letter-spacing: -0.05em; /* Unir letras solo un poco */
             position: relative;
             display: inline-block;
         }
@@ -48,7 +48,7 @@
             100% { text-shadow: 0 0 0px #FFD700; } /* Sin brillo */
         }
         .glow span {
-            animation: glow 1.5s ease-in-out forwards; /* Tiempo total de animación por letra */
+            animation: glow 1s ease-in-out forwards; /* Tiempo total de animación por letra */
         }
         /* Animación secuencial para el brillo */
         .glow span:nth-child(1) { animation-delay: 0s; }
@@ -69,7 +69,7 @@
             100% { opacity: 1; }
         }
         .glow {
-            animation: glow-sequence 08s infinite; /* Duración total para pasar por todas las letras */
+            animation: glow-sequence 05s infinite; /* Duración total para pasar por todas las letras */
         }
         h2 {
             font-family: 'Poppins', sans-serif; /* Cambiar fuente a Poppins */
