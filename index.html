@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -53,29 +53,12 @@
             color: white;
             z-index: 1;
             text-shadow: 0 0 0px #FFD700;
-            animation: glow 0.3s ease-in-out forwards; 
+            opacity: 0; /* Inicialmente apagadas */
+            transition: opacity 0.3s ease-in-out; /* Transición para el brillo */
         }
-        @keyframes glow {
-            0% { text-shadow: 0 0 0px #FFD700; }
-            50% { text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700; }
-            100% { text-shadow: 0 0 0px #FFD700; }
-        }
-        .glow span:nth-child(1) { animation-delay: 0s; }
-        .glow span:nth-child(2) { animation-delay: 0.3s; }
-        .glow span:nth-child(3) { animation-delay: 0.6s; }
-        .glow span:nth-child(4) { animation-delay: 0.9s; }
-        .glow span:nth-child(5) { animation-delay: 1.2s; }
-        .glow span:nth-child(6) { animation-delay: 1.5s; }
-        .glow span:nth-child(7) { animation-delay: 1.8s; }
-        .glow span:nth-child(8) { animation-delay: 2.1s; }
-        .glow span:nth-child(9) { animation-delay: 2.4s; }
-        .glow span:nth-child(10) { animation-delay: 2.7s; }
-        .glow span:nth-child(11) { animation-delay: 3s; }
-        
-        /* Ciclo de la animación de la secuencia de brillo */
-        @keyframes glow-sequence {
-            0% { opacity: 1; }
-            100% { opacity: 1; }
+        .glow span.active {
+            opacity: 1; /* Brillo encendido */
+            text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700;
         }
         h2 {
             font-family: 'Poppins', sans-serif;
@@ -119,15 +102,25 @@
     <h2>Tengo un recordatorio para ti</h2>
     <a href="page2.html" class="button">Pincha aquí</a>
     <script>
-        // Reinicia la animación al cargar
         const glowElements = document.querySelectorAll('.glow span');
-        glowElements.forEach((el) => {
-            el.addEventListener('animationend', () => {
-                el.style.animation = 'none'; // Detenemos la animación
-                el.offsetHeight; // Forzamos un reflow
-                el.style.animation = ''; // Reiniciamos la animación
-            });
-        });
+        let index = 0;
+
+        function activateNextLetter() {
+            // Apagar todas las letras
+            glowElements.forEach(el => el.classList.remove('active'));
+
+            // Activar la letra actual
+            glowElements[index].classList.add('active');
+
+            // Avanzar al siguiente índice
+            index = (index + 1) % glowElements.length;
+
+            // Llamar a la siguiente letra después de 1 segundo
+            setTimeout(activateNextLetter, 1000);
+        }
+
+        // Iniciar la animación
+        activateNextLetter();
     </script>
 </body>
 </html>
