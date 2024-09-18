@@ -31,6 +31,21 @@
             background: rgba(0, 71, 171, 0.6);
             z-index: 1;
         }
+        .water-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://example.com/your-water-image.png') repeat;
+            opacity: 0.5;
+            animation: wave 10s linear infinite;
+            z-index: 1; /* Asegúrate de que esté por encima del fondo pero debajo del contenido */
+        }
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 0; }
+        }
         h1 {
             font-family: 'Oswald', sans-serif;
             font-weight: bold;
@@ -52,11 +67,11 @@
             position: relative;
             color: white;
             z-index: 1;
-            text-shadow: 0 0 0px #FFD700; /* Sin brillo por defecto */
-            transition: text-shadow 0.3s ease-in-out; /* Transición para el brillo */
+            text-shadow: 0 0 0px #FFD700;
+            transition: text-shadow 0.3s ease-in-out;
         }
         .glow span.active {
-            text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700; /* Brillo activo */
+            text-shadow: 0 0 10px #FFD700, 0 0 10px #FFD700, 0 0 10px #FFD700;
         }
         h2 {
             font-family: 'Poppins', sans-serif;
@@ -84,6 +99,7 @@
     </style>
 </head>
 <body>
+    <div class="water-effect"></div>
     <h1 class="glow">
         <span>J</span>
         <span>U</span>
@@ -104,20 +120,12 @@
         let index = 0;
 
         function activateNextLetter() {
-            // Apagar el brillo de todas las letras
             glowElements.forEach(el => el.classList.remove('active'));
-
-            // Activar la letra actual
             glowElements[index].classList.add('active');
-
-            // Avanzar al siguiente índice
             index = (index + 1) % glowElements.length;
-
-            // Llamar a la siguiente letra después de 1 segundo
             setTimeout(activateNextLetter, 300);
         }
 
-        // Iniciar la animación
         activateNextLetter();
     </script>
 </body>
